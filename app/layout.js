@@ -1,5 +1,7 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
+import Mainlayout from "@/components/Mainlayout";
+import MenuContextProvider from "@/context/MenuContext";
 
 
 export const metadata = {
@@ -10,7 +12,11 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body >{children}</body>
+      <body>
+        <MenuContextProvider>
+          <Mainlayout>{children}</Mainlayout> 
+        </MenuContextProvider>
+      </body>
     </html>
   );
 }
