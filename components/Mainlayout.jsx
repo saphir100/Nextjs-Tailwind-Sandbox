@@ -3,7 +3,7 @@ import React, { useContext } from "react";
 import { AiOutlineHome } from "react-icons/ai";
 import { GrProjects } from "react-icons/gr";
 import { FaAngleRight, FaCheck, FaCheckDouble } from "react-icons/fa";
-import { SiHelpscout } from "react-icons/si";
+import { SiHelpscout, SiSinglestore } from "react-icons/si";
 import { FiPhoneCall } from "react-icons/fi";
 
 import Link from "next/link";
@@ -44,15 +44,23 @@ const Mainlayout = ({ children }) => {
             </li>
 
             <li
-              className="flex justify-start  items-center
+              className="flex flex-col justify-start  items-start
              hover:bg-blue-300 p-2
             hover:text-blue-900 px-3 space-x-1 rounded-lg"
             >
-              <FaCheck />
-              <h1 className="flex-1" href="#">
-                singular
-              </h1>
-              <FaAngleRight />
+              <div className="w-full flex flex-row justify-start items-center">
+                <FaCheck className="mr-2"/>
+                <h1 className="flex-1" href="#">
+                  singular
+                </h1>
+                <FaAngleRight />
+              </div>
+              <ul className="ml-8 mt-4">
+                <li className="flex flex-row justify-center items-center gap-3">
+                  <SiSinglestore/>
+                  <Link href="/singular/selectbox">Select Box </Link>
+                </li>
+              </ul>
             </li>
 
             <li
